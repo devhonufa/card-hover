@@ -1,0 +1,240 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  background: #ffffff;
+}
+.container{
+  width: 1100px;
+
+}
+.cards{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.card{
+  position: relative;
+  max-width: 300px;
+  height: 210px;
+  background: #fff;
+  margin: 40px 10px;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease-in-out;
+  border-radius: 4px;
+  border-bottom: 4px solid #0984b9;
+}
+.card:hover{
+  height: 440px;
+}
+.img-box{
+  position: relative;
+  width: 230px;
+  top: -60px;
+  left: 20px;
+  padding: 5px;
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+
+}
+.card .img-box img{
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+}
+.content{
+  position: relative;
+  margin-top: -120px;
+  padding: 10px 15px;
+  color: #111;
+  visibility: hidden;
+  text-align: center;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.content h2{
+  color:#0984b9 ;
+  margin-bottom: 10px;
+}
+.card:hover .content{
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.3s;
+}
+.social{
+   margin-top: 15px;
+}
+.social i{
+  font-size: 16px;
+  padding: 6px;
+  color: #fff;
+  background: #0984b9;
+  border-radius: 50%;
+}
+/* servisec coding */
+.services{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+.single-service{
+  position: relative;
+  display: flex;
+  width: 45%;
+  height: 310px;
+  background: #fff;
+  margin: 30px 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease-in-out;
+  border-radius: 4px;
+}
+.image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(30, 46, 56);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+/* card top hover */
+/* .single-service:hover .image{
+   width: 130px;
+   height: 130px;
+   border-radius: 50%;
+     background: #9b079b
+    transition: 0.5s ease-in-out;
+   left: 60px;
+   top: -40px;
+}  */
+
+/* hover left side  */
+.single-service:hover .image{
+  width: 150px;
+  height: 150px;
+  left: -60px;
+  border-radius: 6px;
+  top: calc(50% - 75px);
+  transition: 0.5s ease-in-out;
+  background: #12658c;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+} 
+.single-service .image:before{
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 6em;
+  color: rgb(255, 255, 255, .05);
+  font-weight:800;
+}
+
+.single-service:hover .image i{
+  font-size: 50px;
+  color: #fff;
+}
+
+.image i{
+  font-size: 90px;
+  transition: 0.5s ease-in-out;
+  color: #fff;
+}
+.single-service .content1{
+  position: absolute;
+  right: 0;
+  width: calc(100% - 80px);
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+
+}
+.single-service .content1 h3{
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.single-service .content1 p{
+  line-height: 1.5;
+}
+.single-service .content1 a{
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+  width: 50%;
+  margin: 10px 0;
+  text-align: center;
+  background: #000000;
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* mediya query */
+@media(max-width:992px){
+  .container{
+    width: 100%;
+  }
+  .services{
+    flex-direction: column;
+    align-items: center;
+  }
+  .single-service{
+    width: 400px;
+  }
+}
+@media(max-width:768px){
+  .single-service{
+    width: 300px;
+    flex-direction: column;
+    height: auto;
+  }
+  .image{
+    position: relative;
+    
+  }
+  .single-service .image,
+  .single-service:hover .image{
+    width: 100%;
+    height: 200px;
+    left: 0;
+  }
+  .single-service .image i,
+  .single-service:hover .image i{
+    font-size: 90px;
+  }
+  .single-service .image:before{
+    font-size: 5em;
+  }
+  .single-service .content1{
+    position: relative;
+    width: 100%;
+  }
+
+}
